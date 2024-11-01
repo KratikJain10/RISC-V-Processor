@@ -1,0 +1,11 @@
+*.log
+*.jou
+*.str
+*.tcl
+*.xpr
+.Xil/
+.ip_user_files/
+.runs/
+.cache/
+.hw/
+.sim/
