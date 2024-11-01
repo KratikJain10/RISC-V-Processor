@@ -4,7 +4,8 @@
 *.tcl
 *.xpr
 .Xil/
-.runs/
+RISC-V-Processor.runs/
 RISC-V-Processor.cache/
 RISC-V-Processor.hw/
-RISC-V-Processor.ip_user_files
+RISC-V-Processor.ip_user_files/
+RISC-V-Processor.sim/
