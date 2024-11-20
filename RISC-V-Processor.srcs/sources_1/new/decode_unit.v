@@ -28,7 +28,7 @@ module decode_unit
     ,output          decode_out_valid_o
     ,output [ 31:0]  decode_out_instr_o
     ,output [ 31:0]  decode_out_pc_o
-    ,output          deoce_fault_out
+    ,output          decode_fault_out
     ,output          is_instr_exec_o
     ,output          is_instr_lsu_o
     ,output          is_instr_branch_o
@@ -70,7 +70,7 @@ begin
     assign decode_out_pc_o           = decoded_pc;
     assign decode_out_instr_o        = decoded_instr;
   
-    assign deoce_fault_out  = fetch_in_fault_fetch_i && !squash_decode_i;
+    assign decode_fault_out  = fetch_in_fault_fetch_i && !squash_decode_i;
 
     assign fetch_in_accept_o        = decode_out_accept_i;
 end
