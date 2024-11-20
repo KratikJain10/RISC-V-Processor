@@ -5,8 +5,7 @@ module register_file
      input           clk_i,
      input           rst_i,
      input  [  4:0]  rd0_i,           // Write address
-     input  [ 31:0]  rd0_value_i,     // Write data
-     input           rd0_we_i,        // Write enable
+     input  [ 31:0]  rd0_value_i,     // Write data       // Write enable
      input  [  4:0]  ra0_i,           // Read address A
      input  [  4:0]  rb0_i,           // Read address B
 
@@ -14,7 +13,6 @@ module register_file
     output [ 31:0]  ra0_value_o,      // Read data A
     output [ 31:0]  rb0_value_o       // Read data B
 );
-
 //-----------------------------------------------------------------
 // Register File Storage (32x32-bit Distributed RAM)
 //-----------------------------------------------------------------
@@ -24,7 +22,7 @@ module register_file
 // Write Logic (Synchronous)
 //-----------------------------------------------------------------
 always @(posedge clk_i) begin
-    if (rd0_we_i && rd0_i != 5'b00000) begin
+    if (rd0_i != 5'b00000) begin
         register_file[rd0_i] <= rd0_value_i;  // Write to register file (excluding x0)
     end
 end
